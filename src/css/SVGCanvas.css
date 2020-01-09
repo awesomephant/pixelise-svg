@@ -1,0 +1,41 @@
+.drawing {
+    overflow: hidden;
+    position: relative;
+}
+
+.grid {
+    position: absolute;
+    z-index: -100;
+    left: 0;
+    top: 0;
+}
+
+.grid polygon {
+    stroke: var(--grid-color);
+    stroke-width: .5px;
+}
+
+path, polygon {
+    fill: none;
+    stroke: none;
+    stroke-width: 2px;
+}
+
+polygon.result {
+    stroke: black;
+    /* fill: black; */
+}
+
+.hidden {
+    display: none;
+}
+.workDrawing {
+    display: none;
+}
+
+.outputDrawing {
+}
+
+.input {
+    /* stroke: grey; */
+}

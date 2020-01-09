@@ -1,0 +1,48 @@
+.settings {
+    background: white;
+    border-left: 1px solid var(--grid-color);
+    padding: .5rem;
+    border-radius: 1px;
+    display: block;
+    box-shadow: 0 3px 10px -5px rgba(0,0,0,.4);
+    position: absolute;
+    width: 15rem;
+    top: 1rem;
+    right: 1rem;
+}
+.setting {
+    margin-bottom: 1rem;
+    max-width: 90%;
+}
+label {
+    font-size: .7rem;
+    display: block;
+    margin-bottom: 0rem;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider-input {
+    margin-bottom: -.5rem;
+}
+
+.slider-value {
+    max-width: 1.5em;
+    display: inline-block;
+    overflow: hidden;
+}
+.value-input {
+    font-size: .7rem;
+    text-align: center;
+    appearance: textfield;
+    border: 0;
+    vertical-align: center;
+    width: 100%;
+    padding: 0;
+    background: none;
+}
+.value-input:hover, .value-input:focus {
+    border-bottom: 1px solid gray;
+}
