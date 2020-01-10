@@ -15,23 +15,27 @@ export default class SVGCanvas extends React.Component {
         }
         this.c = null;
         this.cg = null;
+        this.outputDrawing = React.createRef()
         this.componentDidMount = this.componentDidMount.bind(this)
         this.drawResult = this.drawResult.bind(this)
         this.processPath = this.processPath.bind(this)
         this.drawGrid = this.drawGrid.bind(this)
         this.handleDrop = this.handleDrop.bind(this)
+        this.updateBlob = this.updateBlob.bind(this)
     }
     componentDidMount() {
         this.c = SVG().addTo('#workDrawing');
         this.cg = SVG().addTo('#drawing').size(this.props.width, this.props.height).attr('class', 'grid')
         this.drawGrid();
         this.drawResult();
+        this.updateBlob()
     }
-
+    
     componentDidUpdate(prevProps) {
         this.drawGrid();
         if (!equal(this.props, prevProps)) {
             this.drawResult();
+            this.updateBlob()
         }
     }
 
@@ -120,6 +124,12 @@ export default class SVGCanvas extends React.Component {
         return result;
     }
 
+    updateBlob() {
+        const svgData = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1300" height="660">' + this.outputDrawing.current.innerHTML + '</svg>';
+        const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+        this.props.handleSVGBlob(svgBlob)
+    }
+
     drawResult() {
         this.c.clear()
         let results = []
@@ -131,11 +141,11 @@ export default class SVGCanvas extends React.Component {
     }
     render() {
         const polygons = this.state.outputPolygons.map((poly, i) => {
-            return (<polygon key={i} className='result' points={poly.join(' ')}></polygon>)
+            return (<polygon key={i} style={{stroke: 'black'}} className='result' points={poly.join(' ')}></polygon>)
         })
         return (
             <div onDrop={this.handleDrop} onDragOver={this.handleDragOver} onDragEnter={this.handleDragEnter} className='drawing' id='drawing'>
-                <svg className='outputDrawing' width={this.props.width} height={this.props.height}>
+                <svg className='outputDrawing' ref={this.outputDrawing} width={this.props.width} height={this.props.height}>
                     {polygons}
                 </svg>
                 <div className='workDrawing' id='workDrawing'></div>
