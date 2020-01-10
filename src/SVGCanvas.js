@@ -21,6 +21,8 @@ export default class SVGCanvas extends React.Component {
         this.processPath = this.processPath.bind(this)
         this.drawGrid = this.drawGrid.bind(this)
         this.handleDrop = this.handleDrop.bind(this)
+        this.handleDragOver = this.handleDragOver.bind(this)
+        this.handleDragExit = this.handleDragExit.bind(this)
         this.updateBlob = this.updateBlob.bind(this)
     }
     componentDidMount() {
@@ -42,6 +44,12 @@ export default class SVGCanvas extends React.Component {
     handleDragOver(e) {
         e.stopPropagation();
         e.preventDefault()
+        this.setState({isDragOver: true})
+    }
+    handleDragExit(e) {
+        e.stopPropagation();
+        e.preventDefault()
+        this.setState({isDragOver: false})
     }
 
     handleDragEnter(e) {
@@ -63,6 +71,7 @@ export default class SVGCanvas extends React.Component {
     handleDrop(ev) {
         ev.stopPropagation();
         ev.preventDefault();
+        this.setState({isDragOver: false})
         if (ev.dataTransfer.items) {
             if (ev.dataTransfer.items[0].kind === 'file') {
                 var file = ev.dataTransfer.items[0].getAsFile();
@@ -144,11 +153,12 @@ export default class SVGCanvas extends React.Component {
             return (<polygon key={i} style={{stroke: 'black'}} className='result' points={poly.join(' ')}></polygon>)
         })
         return (
-            <div onDrop={this.handleDrop} onDragOver={this.handleDragOver} onDragEnter={this.handleDragEnter} className='drawing' id='drawing'>
+            <div data-dragover={this.state.isDragOver} onDrop={this.handleDrop} onDragOver={this.handleDragOver} onDragExit={this.handleDragExit} onDragEnter={this.handleDragEnter} className='drawing' id='drawing'>
                 <svg className='outputDrawing' ref={this.outputDrawing} width={this.props.width} height={this.props.height}>
                     {polygons}
                 </svg>
                 <div className='workDrawing' id='workDrawing'></div>
+                <div className='drag-overlay'><h2>Drop files anywhere to process</h2></div>
             </div>
         )
     }

@@ -2,7 +2,34 @@
     overflow: hidden;
     position: relative;
 }
+.drag-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background: white;
+    opacity: 0;
+    transition: 200ms;
+}
+.drag-overlay h2{
+    color: black;
+    font-weight: 400;
+    font-size: 3rem;
+    transition: 300ms;
+    transform: translateY(1rem) scale(1);
+}
 
+[data-dragover=true] .drag-overlay{
+    opacity: 1;
+}
+[data-dragover=true] .drag-overlay h2{
+    transform: translateY(0) scale(1)
+}
 .grid {
     position: absolute;
     z-index: -100;
