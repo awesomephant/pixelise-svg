@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pixelise-svg/static/css/main.04ef7a9d.chunk.css",
+    "main.js": "/pixelise-svg/static/js/main.08f95ff5.chunk.js",
+    "main.js.map": "/pixelise-svg/static/js/main.08f95ff5.chunk.js.map",
+    "runtime-main.js": "/pixelise-svg/static/js/runtime-main.30637720.js",
+    "runtime-main.js.map": "/pixelise-svg/static/js/runtime-main.30637720.js.map",
+    "static/js/2.24f33357.chunk.js": "/pixelise-svg/static/js/2.24f33357.chunk.js",
+    "static/js/2.24f33357.chunk.js.map": "/pixelise-svg/static/js/2.24f33357.chunk.js.map",
+    "index.html": "/pixelise-svg/index.html",
+    "precache-manifest.524d50ec20556cca26b75f5eb304d3e3.js": "/pixelise-svg/precache-manifest.524d50ec20556cca26b75f5eb304d3e3.js",
+    "service-worker.js": "/pixelise-svg/service-worker.js",
+    "static/css/main.04ef7a9d.chunk.css.map": "/pixelise-svg/static/css/main.04ef7a9d.chunk.css.map",
+    "static/js/2.24f33357.chunk.js.LICENSE": "/pixelise-svg/static/js/2.24f33357.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.30637720.js",
+    "static/js/2.24f33357.chunk.js",
+    "static/css/main.04ef7a9d.chunk.css",
+    "static/js/main.08f95ff5.chunk.js"
+  ]
+}
