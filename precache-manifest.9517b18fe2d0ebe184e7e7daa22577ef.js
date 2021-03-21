@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "49a95cecd07e4cc9b3eab5cb6553e3ec",
+    "revision": "b2762d4acbd61689ee050c74982659bd",
     "url": "/pixelise-svg/index.html"
   },
   {
-    "revision": "644dc8aa31874eaae071",
-    "url": "/pixelise-svg/static/css/main.04ef7a9d.chunk.css"
+    "revision": "a19b35fb83d05b82680d",
+    "url": "/pixelise-svg/static/css/main.f3861855.chunk.css"
   },
   {
     "revision": "b18f89d5e9542d8b374c",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pixelise-svg/static/js/2.24f33357.chunk.js.LICENSE"
   },
   {
-    "revision": "644dc8aa31874eaae071",
-    "url": "/pixelise-svg/static/js/main.08f95ff5.chunk.js"
+    "revision": "a19b35fb83d05b82680d",
+    "url": "/pixelise-svg/static/js/main.5be8c858.chunk.js"
   },
   {
     "revision": "8294f226a651a72e146f",
