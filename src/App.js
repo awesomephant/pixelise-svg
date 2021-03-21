@@ -54,11 +54,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <header className="app-header">
-          <h1>Pixelise SVG</h1>
-        </header>
         <main className='app-wrap'>
-          <SVGCanvas handleSVGBlob={this.handleSVGBlob} width='1300' height='660' samples={this.state.settings.samples} resX={this.state.settings.resX} resY={this.state.settings.resY} enableGrid={this.state.settings.enableGrid}></SVGCanvas>
+          <SVGCanvas handleSVGBlob={this.handleSVGBlob} width='1850' height='1100' samples={this.state.settings.samples} resX={this.state.settings.resX} resY={this.state.settings.resY} enableGrid={this.state.settings.enableGrid}></SVGCanvas>
           <Settings svgBlob={this.state.svgBlob} updateSetting={this.updateSetting} settings={this.state.settings}></Settings>
         </main>
       </div>

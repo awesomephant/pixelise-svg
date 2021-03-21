@@ -29,6 +29,7 @@ export default class Settings extends React.Component {
     render() {
         return (
             <div className='settings'>
+                <h2>Pixelise SVG</h2>
                 <Slider changeHandler={this.handleChange} value={this.props.settings.resX} title='Resolution X' id='resX' min='1' max='300' step='1'></Slider>
                 <Slider changeHandler={this.handleChange} value={this.props.settings.resY} title='Resolution Y' id='resY' min='1' max='300' step='1'></Slider>
                 <Slider changeHandler={this.handleChange} value={this.props.settings.samples} title='Samples' id='samples' min='10' max='300' step='1'></Slider>
